@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    <c-price-tag :price="product.price" :in_stock="product.in_stock" />
+    <p>Category: {{ product.category.name }}</p>
+
+    <c-button url="{% url 'catalog:product_list' %}">Back to catalog</c-button>
+{% endblock %}

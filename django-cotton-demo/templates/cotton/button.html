@@ -1,0 +1,4 @@
+<c-vars url="#" external=False />
+<a href="{{ url }}" {% if external %}target="_blank"{% endif %} class="btn" {{ attrs }}>
+    {{ slot }}
+</a>

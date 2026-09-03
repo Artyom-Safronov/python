@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load catalog_extras %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.price|usd }} — {% stock_badge product %}</p>
+    <p>Category: {{ product.category.name }}</p>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <h1>About us</h1>
+    <p>Founded in {{ founded_year }}, team of {{ team_size }} people.</p>
+    <c-button url="{% url 'catalog:product_list' %}" external>Browse catalog</c-button>
+{% endblock %}

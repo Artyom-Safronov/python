@@ -1,0 +1,3 @@
+{% if x %}{{ y }}{% endif %}
+
+{{ today.year if today else 2026 }} Jinja2 Demo

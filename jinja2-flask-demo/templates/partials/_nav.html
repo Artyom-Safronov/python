@@ -1,0 +1,12 @@
+<nav>
+    <a href="{{ url_for('index') }}">Catalog</a>
+    <a href="{{ url_for('about') }}">About</a>
+    {% if session.username %}
+        <span>Hi, {{ session.username }}</span>
+        <form method="post" action="{{ url_for('logout') }}" style="display:inline">
+            <button type="submit">Log out</button>
+        </form>
+    {% else %}
+        <a href="{{ url_for('login') }}">Log in</a>
+    {% endif %}
+</nav>

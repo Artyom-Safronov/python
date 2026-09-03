@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load catalog_extras %}
+
+{% block title %}Catalog{% endblock %}
+
+{% block content %}
+<h1>Products{% if query %} matching "{{ query }}"{% endif %}</h1>
+
+<ul class="products">
+    {% for product in products %}
+    <li>
+        <a href="{% url 'catalog:product_detail' pk=product.pk %}">{{ product.name }}</a>
+        {{ product.price|usd }} — {% stock_badge product %}
+    </li>
+    {% empty %}
+    <li>No products yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

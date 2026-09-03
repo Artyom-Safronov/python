@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Catalog{% endblock %}
+
+{% block content %}
+    <h1>Products{% if query %} matching "{{ query }}"{% endif %}</h1>
+
+    <ul class="products">
+        {% for product in products %}
+            <c-product-card :product="product">
+                <c-slot name="actions">
+                    <a href="#compare-{{ product.pk }}">Compare</a>
+                </c-slot>
+            </c-product-card>
+        {% empty %}
+            <li>No products yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

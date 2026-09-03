@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if product %}{{ product.name }}{% else %}Not found{% endif %}</title>
+</head>
+<body>
+    {% render 'partials/nav.liquid' %}
+
+    <main>
+        {% if product %}
+            <h1>{{ product.name }}</h1>
+            {% render 'partials/price_tag.liquid', product: product %}
+
+            {% if related.size > 0 %}
+                <h2>Related</h2>
+                <ul>
+                    {% for item in related %}
+                        <li>{{ item.name }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% else %}
+            <p>Product not found.</p>
+        {% endif %}
+    </main>
+</body>
+</html>

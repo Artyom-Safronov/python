@@ -1,0 +1,5 @@
+{% if product.in_stock %}
+    <span class="price in-stock">{{ product.price | round: 2 }} USD</span>
+{% else %}
+    <span class="price out-of-stock">{{ product.price | round: 2 }} USD</span>
+{% endif %}

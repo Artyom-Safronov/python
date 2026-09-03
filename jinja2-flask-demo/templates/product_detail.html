@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "partials/_macros.html" import price_tag %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    {% if product %}
+        <h1>{{ product.name }}</h1>
+        {{ price_tag(product) }}
+
+        {% if related %}
+            <h2>Related</h2>
+            <div><span>{{ product }}</span></div>
+            <ul>
+                {% for item in related %}
+                    <li>{{ item.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% else %}
+        <p>Product not found.</p>
+    {% endif %}
+{% endblock %}

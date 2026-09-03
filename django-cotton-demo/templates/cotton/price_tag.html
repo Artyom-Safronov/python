@@ -1,0 +1,4 @@
+<c-vars price in_stock=True />
+<span class="price {% if in_stock %}in-stock{% else %}out-of-stock{% endif %}">
+    {{ price|floatformat:2 }} USD
+</span>

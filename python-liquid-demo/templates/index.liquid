@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} — Liquid Demo</title>
+</head>
+<body>
+    {% render 'partials/nav.liquid' %}
+
+    <main>
+        <h1>{{ title | upcase }}</h1>
+
+        <ul class="products">
+            {% for product in products %}
+                <li>
+                    <a href="/products/{{ product.id }}">{{ product.name }}</a>
+                    {% render 'partials/price_tag.liquid', product: product %}
+                </li>
+            {% else %}
+                <li>No products yet.</li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; {{ today | date: '%Y' }} Liquid Demo</p>
+    </footer>
+</body>
+</html>

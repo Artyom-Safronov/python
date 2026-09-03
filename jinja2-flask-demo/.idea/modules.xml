@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../dtl-django-demo/.idea/dtl-django-demo.iml" filepath="$PROJECT_DIR$/../dtl-django-demo/.idea/dtl-django-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jinja2-flask-demo.iml" filepath="$PROJECT_DIR$/.idea/jinja2-flask-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../new/new.iml" filepath="$PROJECT_DIR$/../new/new.iml" />
+    </modules>
+  </component>
+</project>

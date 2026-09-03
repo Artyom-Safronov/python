@@ -1,0 +1,9 @@
+<c-vars product />
+{% url 'catalog:product_detail' pk=product.pk as product_url %}
+<li class="product-card">
+    <c-button :url="product_url">{{ product.name }}</c-button>
+    <c-price-tag :price="product.price" :in_stock="product.in_stock" />
+    {% if actions %}
+    <div class="actions">{{ actions }}</div>
+    {% endif %}
+</li>
